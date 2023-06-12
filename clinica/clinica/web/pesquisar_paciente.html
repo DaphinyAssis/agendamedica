@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Sophistica Health- Agenda Médica</title>
+        <link href="agenda_medica.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="FundoPagina2">
+           
+           <p class="TituloPagina">Pesquisar Paciente</p>
+       
+        <form class="Texto" name="formPesquisaPaciente" method="post" action="pesquisarPaciente" target="_parent">
+             <div class="CaixaTransparente">
+            <p>
+                <input type="radio" name="rbOpcaoPesquisa" value="Nome" checked="checked" />Nome do Paciente:
+                <input type="text" name="txtNomePaciente" class="CampoTexto" size="50" maxlength="50"/>
+            </p>
+            <p>
+                <input type="radio" name="rbOpcaoPesquisa"  value="RG"/>Número do RG:
+                <input type="text" name="txtRG" class="CampoTexto" size="12" maxlength="12"/>
+            </p>
+            <p>
+                   <p><input type="submit" name="btnGravar" value="Pesquisar" class="Texto button"/>
+                        <a class="LinkVoltar button" href="javascript:history.back()">Voltar</a>
+            </p>
+           
+        </form>
+    </body>
+</html>
+

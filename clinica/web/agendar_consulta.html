@@ -1,0 +1,101 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+       
+        <title>Sophistica Health - Agenda Médica</title>
+        <link href="agenda_medica.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body class="FundoPagina2">
+        <div>
+        <p class="TituloPagina">Agendar Consulta</p>
+        </div>
+        <form class= "Texto" name="formAgendarConsulta" method="post" action="agendarConsulta" target="_parent">
+            <div class="CaixaTransparente">
+            <p>Nome Completo do Paciente:
+                <input type="text" name="txtNomePaciente" class="CampoTexto" size="50" maxlength="50"/>
+            </p>
+            <p>Data de nascimento:
+                <input type="text" name="txtDiaNascimento" size="2" maxlength="2"/> /
+                <input type="text" name="txtMesNascimento" size="2" maxlength="2"/> /
+                <input type="text" name="txtAnoNascimento" size="4" maxlength="4"/>
+            </p>
+            <p>Número do RG:
+                <input type="text" name="txtRG" class="CampoTexto" size="12" maxlength="12"/>
+            </p>
+            <p>Telefone:
+                <input type="text" name="txtTelefone" class="CampoTexto" size="20" maxlength="20"/>
+                <a id="whatsappLink" href="" target="_blank">
+        <img src="https://1.bp.blogspot.com/-PM8_Rig8V0M/XxFkv-2f3hI/AAAAAAAACSU/vB1BqbuhFCMyJ8OGCVstFiMLFmavCLqrwCPcBGAYYCw/s1600/whatsapp-logo-1.png" alt="WhatsApp" width="20" height="20">
+        <span id="telefone" style="color: white;"></span>
+    </a>
+</p>
+
+<script>
+    // Captura o valor do campo de telefone
+    var telefone = document.getElementsByName('Telefone')[0];    
+    // Atualiza o atributo href do link com o número de telefone
+    telefone.addEventListener('input', function() {
+        var link = document.getElementById('whatsappLink');
+        var numeroTelefone = telefone.value.replace(/[^\d]/g, ''); // Remove caracteres não numéricos
+        link.href = 'https://api.whatsapp.com/send?phone=' + numeroTelefone;
+        document.getElementById('telefone').textContent = numeroTelefone;
+    });</script>
+            <p>Data da Consulta:
+                <input type="text" name="txtDiaConsulta" size="2" maxlength="2"/> /
+                <input type="text" name="txtMesConsulta" size="2" maxlength="2"/> /
+                <input type="text" name="txtAnoConsulta" size="4" maxlength="4"/> 
+                
+           
+            </p>
+            <p>Hora da Consulta:
+                 <input type="text" name="txtHora" size="2" maxlength="2"/> :
+                <input type="text" name="txtMinutos" size="2" maxlength="2"/>
+            </p>
+            <p>Doutor:
+                <select name="lstDoutor" id="lstDoutor">
+                    <option value="Aline">Dra.Aline Correia Fernandes</option>
+                    <option value="Arthur">Dr.Arthur Pereira Ferreira</option>
+                    <option value="Beatrice">Dra.Beatrice Cardoso Rodrigues</option>
+                    <option value="Bruna">Dra.Bruna Fernandes Castro</option>
+                    <option value="Igor">Dr.Igor Pereira Cardoso</option>
+                    <option value="Manuela">Dra.Manuela Cavalcanti Ribeiro</option>
+                    <option value="Marina">Dra.Marina Correia Goncalves</option>
+                    <option value="Matheus">Dr.Matheus Carvalho Melo</option>
+                    <option value="Samuel">Dr.Samuel Dias Ferreira</option>
+                    <option value="Thiago">Dr.Thiago Ferreira Costa</option>
+                    <option value="Victor">Dr.Victor Rocha Dias</option>
+                  </select>
+            </p>      
+                   
+               <p>Especialidade: <select name="rbEspecialidade">
+                       
+                    <option value="Cardiologia">Cardiologia</option>
+                    <option value="Fonoaudiologia">Fonoaudiologia</option>
+                    <option value="Neurologia">Neurologia</option>
+                    <option value="Urologia">Urologia</option>
+                    <option value="Pneumologia">Pneumologia</option>
+                    <option value="Infectologia">Infectologia</option>
+                    <option value="Ginecologia">Ginecologia</option>
+                    <option value="Nefrologia">Nefrologia</option>
+                    <option value="Oftalmologia">Oftalmologia</option>
+                    <option value="Dermatologia">Dermatologia</option>
+                    <option value="Psiquiatria">Psiquiatria</option>
+                </select>
+            </p>
+      
+                    <p>Valor da Consulta: R$
+  <input type="text"  name="txtValor" size="10" maxlength="10" placeholder="Digite o valor">
+</p>        
+                 
+     
+             <br>
+           <p>
+    <input type="submit" name="btnGravar" value="Agendar" class="Texto button" />
+    <a class="LinkVoltar button" href="javascript:history.back()">Voltar</a>
+</p>
+
+   </form>
+ </body>
+</html>    
+
